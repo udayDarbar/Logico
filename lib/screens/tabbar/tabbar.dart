@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_store_ui/image_loader.dart';
+import 'package:fresh_store_ui/screens/cart/cart_mainpage.dart';
 import 'package:fresh_store_ui/screens/home/home.dart';
 import 'package:fresh_store_ui/screens/profile/profile_screen.dart';
 import 'package:fresh_store_ui/screens/test/test_screen.dart';
 import 'package:fresh_store_ui/size_config.dart';
-import 'package:fresh_store_ui/login/components/components.dart';
+
 
 class TabbarItem {
   final String lightIcon;
@@ -39,7 +40,7 @@ class _FRTabbarScreenState extends State<FRTabbarScreen> {
     const HomeScreen(
       title: '首页0',
     ),
-    const TestScreen(title: 'Cart'),
+    const CartMainpage(),
     const TestScreen(title: 'Orders'),
     const ProfileScreen(),
   ];
@@ -84,8 +85,16 @@ class _FRTabbarScreenState extends State<FRTabbarScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+        onWillPop: () async {
+          
+          return false;
+        }, 
+    child :Scaffold(
+       
       body: screens[_select],
+      
+    
       bottomNavigationBar: BottomNavigationBar(
         items: items,
         onTap: ((value) => setState(() => _select = value)),
@@ -102,6 +111,6 @@ class _FRTabbarScreenState extends State<FRTabbarScreen> {
         selectedItemColor: const Color(0xFF212121),
         unselectedItemColor: const Color(0xFF9E9E9E),
       ),
-    );
+    ));
   }
 }

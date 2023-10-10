@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_store_ui/login/components/components.dart';
 import 'package:fresh_store_ui/login/constants.dart';
-import 'package:fresh_store_ui/login/screens/welcome.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:fresh_store_ui/login/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../screens/tabbar/tabbar.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -90,7 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.popAndPushNamed(
                                       context, LoginScreen.id);
                                 });
-                                Navigator.pushNamed(context, WelcomeScreen.id);
+                                Navigator.push(context,MaterialPageRoute(builder: (Null) => const  FRTabbarScreen()),
+  );;
                               }
                             } catch (e) {
                               signUpAlert(

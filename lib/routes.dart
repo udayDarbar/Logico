@@ -3,6 +3,7 @@ import 'package:fresh_store_ui/login/screens/home_screen.dart';
 import 'package:fresh_store_ui/login/screens/login_screen.dart';
 import 'package:fresh_store_ui/login/screens/signup_screen.dart';
 import 'package:fresh_store_ui/login/screens/welcome.dart';
+import 'package:fresh_store_ui/screens/cart/cart_mainpage.dart';
 import 'package:fresh_store_ui/screens/detail/detail_screen.dart';
 import 'package:fresh_store_ui/screens/home/home.dart';
 import 'package:fresh_store_ui/screens/mostpopular/most_popular_screen.dart';
@@ -18,8 +19,9 @@ final Map<String, WidgetBuilder> routes = {
   ProfileScreen.route(): (context) => const ProfileScreen(),
   ShopDetailScreen.route(): (context) => const ShopDetailScreen(),
   TestScreen.route(): (context) => const TestScreen(),
+ CartMainpage.route(): (context) => const CartMainpage(),
   HomeScreenl.id: (context) => const HomeScreenl(),
   LoginScreen.id: (context) => const LoginScreen(),
   SignUpScreen.id: (context) => const SignUpScreen(),
-  WelcomeScreen.id: (context) => FRTabbarScreen(),
+ // WelcomeScreen.id: (Null) => FRTabbarScreen(),
 };
